@@ -4,7 +4,7 @@ const scss 	 		= require('gulp-sass')(require('sass'));
 const concat 		= require('gulp-concat');
 const autoprefixer  = require('gulp-autoprefixer');
 const uglify        = require('gulp-uglify');
-const imagemin      = require('gulp-imagemin');
+const rename        = require('gulp-rename');
 const del           = require('del');
 const browserSync   = require('browser-sync').create();
 
@@ -19,9 +19,12 @@ function browsersync() {
 }
 
 function styles() {
-	return src('app/scss/style.scss')
+	return src('app/scss/**/*.scss')
 		.pipe(scss({outputStyle: 'compressed'}))
-		.pipe(concat('style.min.css'))
+		// .pipe(concat())
+		.pipe(rename({
+			suffix : '.min'
+		}))
 		.pipe(autoprefixer({
 			overrideBrowserslist: ['last 10 version'],
 			grid: true
@@ -39,22 +42,6 @@ function scripts() {
 	.pipe(uglify())
 	.pipe(dest('app/js'))
 	.pipe(browserSync.stream())
-}
-
-function images(){
-	return src('app/images/**/*.*')
-	.pipe(imagemin([
-		imagemin.gifsicle({interlaced: true}),
-		imagemin.mozjpeg({quality: 75, progressive: true}),
-		imagemin.optipng({optimizationLevel: 5}),
-		imagemin.svgo({
-			plugins: [
-				{removeViewBox: true},
-				{cleanupIDs: false}
-			]
-		})
-	]))
-	.pipe(dest('dist/images'))
 }
 
 function build() {
@@ -82,8 +69,7 @@ exports.styles = styles;
 exports.scripts = scripts;
 exports.browsersync = browsersync;
 exports.watching = watching;
-exports.images = images;
 exports.cleanDist = cleanDist;
-exports.build = series(cleanDist, images, build);
+exports.build = series(cleanDist, build);
 
 exports.default = parallel(styles, scripts, browsersync, watching);
