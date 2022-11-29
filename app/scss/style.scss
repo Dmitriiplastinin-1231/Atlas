@@ -1,9 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Fredoka+One&family=PT+Serif:ital@0;1&family=Poppins:wght@200;300;400;500;600;700&family=Raleway:wght@500&display=swap');
 @import 'vars';
 @import 'fonts';
 @import 'reset';
 @import 'global';
 
+.logo{
+	position: absolute;
+	top: 50px;
+	font-size: 30px;
+	text-transform: capitalize;
+	&__link{
+		color: $text-black-900;
+		font-weight: 700;
+		padding: 15px 20px;
+		font-size: 30px;
+		letter-spacing: 5px;
+		position: relative;
+		span{
+			font-family: 'Clicker Script', cursive;
+			font-size: 40px;
+		}
+		&::before{
+			content: '';
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-bottom: 5px solid var(--skin-color);
+			border-left: 5px solid var(--skin-color);
+			bottom: 0;
+			left: 0;
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-top: 5px solid var(--skin-color);
+			border-right: 5px solid var(--skin-color);
+			top: 0;
+			right: 0;
+		}
+	}
+}
 
+.nav-toggler{
+	height: 40px;
+	width: 45px;
+	border: 1px solid $bg-black-50;
+	cursor: pointer;
+	position: fixed;
+	left: 300px;
+	top: 20px;
+	border-radius: 5px;
+	background: $bg-black-100;
+	display: none;
+	align-items: center;
+	justify-content: center;
+
+	span{
+		height: 2px;
+		width: 18px;
+		background: var(--skin-color);
+		display: inline-block;
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			height: 2px;
+			width: 18px;
+			background: var(--skin-color);
+			top: -6px;
+			left: 0;
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			height: 2px;
+			width: 18px;
+			background: var(--skin-color);
+			top: 6px;
+			left: 0;
+		}
+	}
+}
+
+.nav{
+	margin-top: 50px;
+	&__list-item{
+		margin-bottom: 20px;
+		display: block;
+	}
+	&__item-link{
+		font-size: 16px;
+		font-weight: 600;
+		display: block;
+		border-bottom: 1px solid $bg-black-50;
+		color: $text-black-900;
+		padding: 5px 15px;
+		i{
+			margin-right: 15px;
+		}
+	}
+	&__item-link--active{
+		color: var(--skin-color);
+	}
+}
 
 @import 'media';
 
