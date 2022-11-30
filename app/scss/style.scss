@@ -106,5 +106,75 @@
 	}
 }
 
+.home{
+	min-height: 100vh;
+	display: flex;
+	color: $text-black-900;
+}
+ 
+.home-info{
+	flex: 0 0 60%;
+	max-width: 60%;
+	&__hi{
+		font-size: 28px;
+		margin: 15px 0;
+		span{
+			font-family: 'Clicker Script', cursive;
+			font-size: 30px;
+			font-weight: 700;
+			color: var(--skin-color);
+		}
+	}
+	&__my-profession{
+		font-size: 30px;
+		margin: 15px 0;
+		span{
+			color: var(--skin-color);
+		}
+	}
+	&__descr{
+		margin-bottom: 70px;
+		font-size: 20px;
+		color: $text-black-700;
+	}
+	&__btn{
+		@extend %btn;
+	}
+}
+
+.home-img{
+	flex: 0 0 40%;
+	max-width: 40%;
+	text-align: center;
+	position: relative;
+	img{
+		height: 400px;
+		width: 280px;
+		object-fit: cover;
+		border-radius: 5px;
+	}
+	&::after{
+		content: '';
+		position: absolute;
+		height: 80px;
+		width: 80px;
+		right: 20px;
+		bottom: -40px;
+		border-bottom: 10px solid var(--skin-color);
+		border-right: 10px solid var(--skin-color);
+	}
+	&::before{
+		content: '';
+		position: absolute;
+		height: 80px;
+		width: 80px;
+		left: 20px;
+		top: -40px;
+		border-top: 10px solid var(--skin-color);
+		border-left: 10px solid var(--skin-color);
+	}
+}
+
+
 @import 'media';
 
