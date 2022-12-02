@@ -175,6 +175,172 @@
 	}
 }
 
+.about-content{
+	flex: 0 0 100%;
+	max-width: 100%;
+
+}
+.about-text{
+	flex: 0 0 100%;
+	max-width: 100%;
+	&__title{
+		font-size: 24px;
+		margin-bottom: 15px;
+		font-weight: 700;
+		color: $text-black-900;
+		span{
+			color: var(--skin-color);
+		}
+	}
+	&__text{
+		font-size: 16px;
+		line-height: 25px;
+		color: $text-black-700;
+	}
+}
+.personal-info{
+	flex: 0 0 60%;
+	max-width: 60%;
+	margin-top: 40px;
+	&__item{
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	&__text{
+		font-weight: 600;
+		padding: 10px 0;
+		font-size: 16px;
+		color: $text-black-900;
+		border-bottom: 1px solid $bg-black-50;
+		span{
+			font-weight: 400;
+			color: $text-black-700;
+			margin-left: 4px;
+		}
+	}
+
+}
+.buttons{
+	margin-top: 30px;
+	&__btn{
+		@extend %btn;
+		margin-right: 15px;
+		margin-top: 10px;
+	}
+}
+.skills{
+	flex: 0 0 40%;
+	max-width: 40%;
+	margin-top: 40px;
+	&__item{
+		flex: 0 0 100%;
+		max-width: 100%;
+		margin-bottom: 25px;
+	}
+	&__title{
+		line-height: 40px;
+		font-weight: 600;
+		font-size: 16px;
+		color: $text-black-900;
+		text-transform: capitalize;
+	}
+	&__progress{
+		background-color: $bg-black-50;
+		height: 7px;
+		border-radius: 4px;
+		width: 100%;
+		position: relative;
+	}
+	&__progress-in{
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		border-radius: 4px;
+		background-color: var(--skin-color);
+	}
+	&__percent{
+		position: absolute;
+		right: 0;
+		top: -40px;
+		font-weight: 400;
+		line-height: 40px;
+	}
+}
+.educ-exper__title{
+	font-size: 24px;
+	margin-bottom: 30px;
+	font-weight: 700;
+	color: $text-black-900;
+}
+.education,
+.experience{
+	margin-top: 30px;
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+.education{
+	&__timeline-box{
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	&__timeline{
+		background-color: $bg-black-100;
+		padding: 30px 15px;
+		border: 1px solid $bg-black-50;
+		border-radius: 10px;
+		width: 100%;
+		position: relative;
+	}
+}
+.timeline{
+	&__item{
+		position: relative;
+		padding-left: 37px;
+		padding-bottom: 50px;
+		&:last-child{
+			padding-bottom: 0;
+		}
+		&::before{
+			content: '';
+			width: 1px;
+			position: absolute;
+			height: 100%;
+			left: 7px;
+			top: 0;
+			background-color: var(--skin-color);
+		}
+	}
+	&__circle-dot{
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 15px;
+		width: 15px;
+		border-radius: 50%;
+		background-color: var(--skin-color);
+	}
+	&__date{
+		font-weight: 400;
+		font-size: 14px;
+		margin-bottom: 12px;
+		color: $text-black-700;
+	}
+	&__title{
+		font-weight: 700;
+		font-size: 18px;
+		margin-bottom: 15px;
+		text-transform: capitalize;
+	}
+	&__text{
+		line-height: 25px;
+		font-size: 16px;
+		text-align: justify;
+		color: $text-black-700;
+	}
+}
+
+
 
 @import 'media';
 
