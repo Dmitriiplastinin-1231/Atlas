@@ -1,0 +1,44 @@
+@media (max-width: 1199px){
+	.personal-info{
+		&__text{
+			span{
+				display: block;
+				margin-left: 0;
+			}
+		}
+	}
+}
+@media (max-width: 991px){
+	.services,
+	.portfolio,
+	.contact{
+		&__item{
+			flex: 0 0 50%;
+			max-width: 50%
+		}
+		.container{
+			margin-bottom: 0;
+		}
+	}
+	.education,
+	.experience,
+	.home-info{
+		flex: 0 0 100%;
+		max-width: 100%
+	}
+	.home-img{
+		display: none
+	}
+}
+@media (max-width: 767px){
+	.services__item,
+	.portfolio__item,
+	.contact__item,
+	.contact__form-item.col-6,
+	.personal-info,
+	.skills{
+		flex: 0 0 100%;
+		max-width: 100%
+
+	}
+}

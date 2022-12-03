@@ -85,3 +85,14 @@ body{
 .hidden{
 	display: none !important;
 }
+@media (max-width: 1199px){
+	.aside{
+		left: -270px
+	}
+	.main-content{
+		margin-left: 0;
+	}
+}
+@media (max-width: 991px){
+	
+}
